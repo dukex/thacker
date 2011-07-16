@@ -9,7 +9,7 @@ describe Post do
   describe "on after create" do
     it "should create a PostLiveStream" do
       post = Factory(:post)
-      PostLiveStream.last.post = post
+      PostLiveStream.last.post.should == post
     end
   end
 end
