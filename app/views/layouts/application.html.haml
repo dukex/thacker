@@ -1,0 +1,20 @@
+!!!
+%html
+  %head
+    %title= content_for?(:title) ? "#{content_for(:title)} | Tranparência Hacker" : "Tranparência Hacker"
+    = stylesheet_link_tag    "application"
+    = csrf_meta_tags
+  %body
+    %div
+      %header
+        %h1 THacker
+        %nav
+          %ul
+            %li= link_to "Blog", posts_path
+            %li= link_to "Eventos", events_path
+            %li= link_to "Membros", "#"
+            %li= link_to "Projetos", projects_path
+      #content= yield
+      %footer
+    = yield :javascripts
+    = javascript_include_tag "application"
