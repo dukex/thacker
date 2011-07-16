@@ -25,6 +25,10 @@ group :development, :test do
   gem "ruby-debug"
 end
 
+group :development do
+  gem "faker"
+end
+
 group :test do
   gem "rspec", ">=2.0.1"
   gem "remarkable", ">=4.0.0.alpha4"
