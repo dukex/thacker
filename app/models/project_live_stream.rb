@@ -1,0 +1,2 @@
+class ProjectLiveStream < LiveStream
+end
