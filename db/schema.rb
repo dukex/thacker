@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110716032517) do
+ActiveRecord::Schema.define(:version => 20110716212830) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                                 :default => "", :null => false
@@ -30,6 +30,31 @@ ActiveRecord::Schema.define(:version => 20110716032517) do
   add_index "admins", ["email"], :name => "index_admins_on_email", :unique => true
   add_index "admins", ["reset_password_token"], :name => "index_admins_on_reset_password_token", :unique => true
 
+  create_table "events", :force => true do |t|
+    t.string   "name"
+    t.text     "about"
+    t.integer  "author_id"
+    t.text     "skills"
+    t.string   "address"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "events", ["author_id"], :name => "index_events_on_author_id"
+
+  create_table "live_streams", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "project_id"
+    t.integer  "post_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "type"
+  end
+
+  add_index "live_streams", ["post_id"], :name => "index_live_streams_on_post_id"
+  add_index "live_streams", ["project_id"], :name => "index_live_streams_on_project_id"
+  add_index "live_streams", ["user_id"], :name => "index_live_streams_on_user_id"
+
   create_table "posts", :force => true do |t|
     t.string   "title"
     t.text     "body"
@@ -39,6 +64,21 @@ ActiveRecord::Schema.define(:version => 20110716032517) do
   end
 
   add_index "posts", ["user_id"], :name => "index_posts_on_user_id"
+
+  create_table "projects", :force => true do |t|
+    t.string   "name"
+    t.text     "about"
+    t.string   "url"
+    t.string   "source_url"
+    t.text     "skills"
+    t.integer  "author_id"
+    t.integer  "status_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "projects", ["author_id"], :name => "index_projects_on_author_id"
+  add_index "projects", ["status_id"], :name => "index_projects_on_status_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                                 :default => "", :null => false
@@ -53,6 +93,7 @@ ActiveRecord::Schema.define(:version => 20110716032517) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
