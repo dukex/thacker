@@ -1,0 +1,5 @@
+"pt-BR":
+  messages:
+    stream:
+      post: "%{user_name} escrever um post: <strong>%{post_title}<strong>"
+      user: "%{user_name} registro no THacker"
