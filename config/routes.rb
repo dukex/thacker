@@ -1,6 +1,7 @@
 Thacker::Application.routes.draw do
-  devise_for :admins
+  resources :events
 
+  devise_for :admins
   devise_for :users
 
   resources :posts
