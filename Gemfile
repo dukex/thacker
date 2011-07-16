@@ -12,3 +12,8 @@ gem 'uglifier'
 gem 'jquery-rails'
 
 gem 'devise'
+
+
+group :test do
+  gem 'rspec-rails'
+end
