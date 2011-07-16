@@ -1,6 +1,7 @@
 namespace :db do
   desc "Bootstraps the database with demo data"
   task :bootstrap => %w(db:setup) do
+    I18n.locale = :en
     i = 0
     10.times.each do
       i = i+1
