@@ -1,6 +1,10 @@
 require 'spec_helper'
 
 describe LiveStream do
+  should_belong_to :user
+  should_belong_to :project
+  should_belong_to :post
+
   describe "type" do
     %w{post project user}.each do |type|
       it "should be #{type}" do
