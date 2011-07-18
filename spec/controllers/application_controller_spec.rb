@@ -6,7 +6,6 @@ describe ApplicationController do
       user = Factory(:user)
       stream = [ LiveStream.first, Factory(:live_stream, :user => user), Factory(:live_stream, :user => user) ].reverse
       get :livestream
-      debugger
       assigns(:stream).should == stream
     end
   end
