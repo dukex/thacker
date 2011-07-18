@@ -3,4 +3,4 @@
 
 %ul
   - @stream.each do |status|
-    %li{:class => status.type }= raw t(status.type, :scope => [:messages, :stream], :user_name => status.user.name, :post_title => status.post.try(:title), :project => status.project)
+    %li{:class => status.type }= raw t(status.type, :scope => [:messages, :stream], :user_name => status.user.name, :post_title => status.post.try(:title), :event_name => status.event.try(:name),:project => status.project)
