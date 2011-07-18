@@ -2,6 +2,7 @@ class LiveStream < ActiveRecord::Base
   belongs_to :user
   belongs_to :project
   belongs_to :post
+  validates_presence_of :user
 
   default_scope :order => "id DESC"
 
