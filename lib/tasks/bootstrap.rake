@@ -14,7 +14,7 @@ namespace :db do
     end
 
     30.times.each do
-      Post.create! :title => Faker::Lorem.sentence, :body => Faker::Lorem.paragraph, :user => User.all.shuffle!.first
+      Event.create! :name => Faker::Lorem.sentence, :author => User.all.shuffle!.first, :about =>  Faker::Lorem.paragraph(5)
     end
   end
 end
