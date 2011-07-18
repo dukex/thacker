@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110716212830) do
+ActiveRecord::Schema.define(:version => 20110718044556) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                                 :default => "", :null => false
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(:version => 20110716212830) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "type"
+    t.integer  "event_id"
   end
 
   add_index "live_streams", ["post_id"], :name => "index_live_streams_on_post_id"
