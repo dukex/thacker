@@ -3,8 +3,10 @@ require 'spec_helper'
 describe ApplicationController do
   describe "livestream" do
     it "should assigns @status as all livestream" do
-      stream = [ Factory(:live_stream), Factory(:live_stream) ].reverse
+      user = Factory(:user)
+      stream = [ LiveStream.first, Factory(:live_stream, :user => user), Factory(:live_stream, :user => user) ].reverse
       get :livestream
+      debugger
       assigns(:stream).should == stream
     end
   end
