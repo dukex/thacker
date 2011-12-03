@@ -2,5 +2,5 @@
   messages:
     stream:
       event: "%{user_name} criou um evento chamado <strong>%{event_name}</strong>"
-      post: "%{user_name} escreveu um post com o titulo <strong>%{post_title}</strong>"
+      post: "%{user_name} escreveu um post com o titulo <strong>%{title}</strong>"
       user: "%{user_name} se registrou no THacker"

@@ -1,0 +1,2 @@
+%li{:class => stream.type }
+  = raw t(:event, :scope => [:messages, :stream], :user_name => stream.user.name, :event_name => stream.event.name)
