@@ -22,7 +22,6 @@ group :development, :test do
   gem "factory_girl_rails"
   gem "rspec-rails", ">=2.0.1"
   gem "evergreen", :require => "evergreen/rails"
-  gem "ruby-debug"
   gem 'sqlite3'
 end
 
